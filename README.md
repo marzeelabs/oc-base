@@ -31,6 +31,23 @@ Done! You should create a new git repository, and commit all files not excluded 
 * Creates default writable versions of `settings.php` and `services.yml`.
 * Creates the `sites/default/files` directory.
 
+## Re-using Phing 
+
+You can re-use the Phing commands from the OC profile or include them in your custom `build.xml`.
+
+For example to install the site, you would run
+
+```
+vendor/bin/phing -f web/profiles/oc/build.xml install
+```
+
+You probably need to create a custom `web/profiles/oc/build.properties` that looks like
+
+```
+project.basedir = THIS-DIRECTORY
+drush.cmd = THIS-DIRECTORY/vendor/bin/drush
+```
+
 ## Updating Open Consortium
 
 TODO
